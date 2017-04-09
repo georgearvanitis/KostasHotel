@@ -1,5 +1,6 @@
 package com.example.soliton.myapplicationkostashotel;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        final MediaPlayer hotelMP = MediaPlayer.create(getApplicationContext(),R.raw.bluehotel);
+        hotelMP.start();
 
         myButtonListenerMethod();
 
@@ -30,10 +32,14 @@ public class MainActivity extends AppCompatActivity {
     private void myButtonListenerMethod() {
 
 
-        Button button=(Button)findViewById(R.id.button) ;
+        final Button button=(Button)findViewById(R.id.button) ;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
+
                 RadioGroup rg=(RadioGroup)findViewById(R.id.radiogroup);
 
                 int radiobuttonid=rg.getCheckedRadioButtonId();
